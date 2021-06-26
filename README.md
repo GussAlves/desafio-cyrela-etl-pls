@@ -8,7 +8,7 @@ A Cyrela possui diversas bases de dados, internas e externas, para alimentar seu
 ## Solução: 
 Para que os dados possam ser utilizados na geração de relatórios relevantes eles precisam ser tratados, pensando nisso criamos um processo utilizando PL/SLQ, onde, os dados passam pelas etapas de _ETL_, conforme apresentadas abaixo: 
 
- - Fluxo de ETL detalhado 
+ > _Fluxo de ETL detalhado_ 
 ![alt text](https://raw.githubusercontent.com/GussAlves/desafio-cyrela-etl-pls/main/_img/ETL_Process.PNG)
 
  - Após esse processo, realizamos a carga para a Data Warehouse no Power BI - ambiente utilizado para construção da dashboard com a respectiva exibição dos dados escolhidos cujo diferencial se apresenta na representação tanto geral/ampla dos negócios das Cyrela quanto específica de cada marca integrante da instituição
