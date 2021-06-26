@@ -8,36 +8,35 @@ A Cyrela possui diversas bases de dados, internas e externas, para alimentar seu
 ## Solução: 
 Para que os dados possam ser utilizados na geração de relatórios relevantes eles precisam ser tratados, pensando nisso criamos um processo utilizando PL/SLQ, onde, os dados passam pelas etapas de _ETL_, conforme apresentadas abaixo: 
 
-Fluxo de ETL detalhado 
+ - Fluxo de ETL detalhado 
 ![alt text](https://raw.githubusercontent.com/GussAlves/desafio-cyrela-etl-pls/main/_img/ETL_Process.PNG)
 
-Após esse processo realizamos a carga para a Data Werehouse no Power BI, realizamos a construção do deshboard para exibição dos dados:
+ - Após esse processo, realizamos a carga para a Data Warehouse no Power BI - ambiente utilizado para construção da dashboard com a respectiva exibição dos dados escolhidos cujo diferencial se apresenta na representação tanto geral/ampla dos negócios das Cyrela quanto específica de cada marca integrante da instituição
+
 ![alt text](https://raw.githubusercontent.com/GussAlves/desafio-cyrela-etl-pls/main/_img/dashboard_view.PNG)
 
-Também está disponível clicando 
-<a href="https://app.powerbi.com/view?r=eyJrIjoiNTg2MjdhNjAtMzhhOC00MWQyLWEzN2EtNzZmOGY5ZTk0MWJmIiwidCI6IjExZGJiZmUyLTg5YjgtNDU0OS1iZTEwLWNlYzM2NGU1OTU1MSIsImMiOjR9&pageName=ReportSection">aqui</a>
+-> Para melhor visualização das informações supramencionadas, <a href="https://app.powerbi.com/view?r=eyJrIjoiNTg2MjdhNjAtMzhhOC00MWQyLWEzN2EtNzZmOGY5ZTk0MWJmIiwidCI6IjExZGJiZmUyLTg5YjgtNDU0OS1iZTEwLWNlYzM2NGU1OTU1MSIsImMiOjR9&pageName=ReportSection">acesse este link</a> 📉 
 
 ## Tecnologias:
 Para esse projeto foi utilizado as seguintes tecnologias:
 
-- [Oracle]   - Usado para armazenar os dados. <a href="https://docs.oracle.com/en/">Doc.</a>
-- [Pl/Sql]   - Linguagem procedural para realizar a migração dos dados transformações de dados. <a href="https://docs.oracle.com/cd/E12151_01/index.htm">Doc.</a>
-- [Power BI] - Data Werehouse - Utlizado para cruzar dados e gerar relatórios; <a href="https://docs.microsoft.com/pt-br/power-bi/">Doc.</a>
+- [Oracle]   - Função de armazenamento dos dados e geração de histórico das tabelas. - :closed_book:<a href="https://docs.oracle.com/en/">doc.</a>
+- [Pl/Sql]   - Linguagem procedural para realizar a migração dos dados transformações de dados. :closed_book:<a href="https://docs.oracle.com/cd/E12151_01/index.htm">Doc.</a>
+- [Power BI] - Data Warehouse - Integração/relacionamento de dados e geração de relatórios; :closed_book:<a href="https://docs.microsoft.com/pt-br/power-bi/">Doc.</a>
 
 ## Organização dos dados:
-A Estrutura das tabelas segue o modelo relacional: 
+A estrutura das tabelas segue o modelo relacional abaixo:
 
 ![alt text](https://raw.githubusercontent.com/GussAlves/desafio-cyrela-etl-pls/main/_img/estrutura_projeto.png)
 
 ## Instalação 
-- _Para realizar os projeto é necessário ter o banco de dados Oracle instalado_.
+- Para realizar a construção do projeto, é necessário que se tenha o banco de dados Oracle instalado em sua máquina.
 
-Após logar no banco, rode os script:
+> Após logar no banco, rode o seguinte script:
 ```sh
 /database/script_create_database.sql
 ```
-
-Após as criações da estrutura é necessário migrar os dados para base, podemos encontrar encontrar os arquivos no caminho abaixo: 
+> Rodou? Boaaa! Agora, após a criação da estrutura, é necessário migrar os dados para base. "Mas onde posso encontrar esse dados?". Podemos encontrar esses dados nos arquivos que estão nos caminhos abaixo:
 
 ```sh
 /*Tabelas em ordem de migração*/
@@ -48,7 +47,9 @@ Após as criações da estrutura é necessário migrar os dados para base, podem
 /migrations/PARCELA_202106191208.sql
 ```
 
-Após finalizar o processo de migrações podemos rodar os scripts PL/SQL para realizar o processo de ETL nos dados, que se consiste em 4 stages, Extração, limpeza, transformação e carga. Podemos encontrar os scripts na pasta 
+> Muito bom! Sigamos, então, da seguinte maneira: Finalizados os processos de migração, podemos rodar os scripts PL/SQL para realizar o famoso de ETL nos dados, que se consiste em 3 stages denominados como Extração, Transformação e Carga. "Como eu posso encontrar tais scripts, Vision?" Dê uma olhada nesta pasta:
+
 ```sh
 /scritps_ETL-plsql
 ```
+Pronto! Está tudo bem feito! Espero que você tenha gostado. Para mais informações ou dúvidas sobre esse projeto, fale entre em contato 
