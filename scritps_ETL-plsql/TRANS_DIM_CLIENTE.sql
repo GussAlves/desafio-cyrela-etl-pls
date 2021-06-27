@@ -6,7 +6,7 @@ DROP TABLE ST3_cliente;
 DROP TABLE METADADO_CLIENTE;
 DROP TABLE DIM_CLIENTE;
 
--- Satge 1 Cliente
+/* Satge 1 Cliente 
 /*Extração dos dados*/
 
 CREATE TABLE ST1_cliente
@@ -19,8 +19,7 @@ Nome 				           varchar2(150),
 DocumentoCliente 			   varchar2(20),
 PercentualParticipacao         number(5, 2),
 Ativo 				           number
-)
-;
+);
 
 /*Passo de coleta dos dados*/
 
@@ -75,8 +74,7 @@ DECLARE CURSOR C_Cliente IS
 SELECT * FROM ST1_cliente;        
 
 
--- Stage 2 
-/*Passo de limpeza dos dados*/
+/* STAGE2 - LIMPEZA DOS DADOS */
 
 CREATE TABLE ST2_cliente
 (
@@ -211,11 +209,10 @@ BEGIN
 END;
 
 SELECT * FROM ST3_cliente;
-SELECT * FROM METADADO_CLIENTE
+SELECT * FROM METADADO_CLIENTE;
 
---STAGE 4 
-
---Criacao da tabela de dimensao CLIENTE
+/* STAGE 4 */ 
+/* Criacao da tabela de dimensao CLIENTE */
 
 CREATE TABLE DIM_CLIENTE
 (
