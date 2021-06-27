@@ -94,7 +94,6 @@ Ativo 				           number NOT NULL
 /*Registrando os dados consistentes*/
 
 DECLARE
-	
     CURSOR C_Q_CLIENTE IS 
         SELECT * FROM ST1_cliente;
 	
@@ -205,21 +204,14 @@ BEGIN
                     V_ST3_CLIENTE.DocumentoCliente,
                     V_ST3_CLIENTE.PercentualParticipacao,
                     V_ST3_CLIENTE.Ativo);
-
 			END IF;
-
 		END LOOP;
-
 		COMMIT;
-	
 	CLOSE C_CLIENTE;
-
 END;
 
 SELECT * FROM ST3_cliente;
-
 SELECT * FROM METADADO_CLIENTE
-
 
 --STAGE 4 
 
