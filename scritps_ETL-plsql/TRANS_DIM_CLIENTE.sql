@@ -3,6 +3,7 @@
 DROP TABLE ST1_cliente;
 DROP TABLE ST2_cliente;
 DROP TABLE ST3_cliente;
+DROP TABLE METADADO_CLIENTE;
 DROP TABLE DIM_CLIENTE;
 
 -- Satge 1 Cliente
@@ -145,7 +146,7 @@ PK_Cliente   INTEGER);
 
 CREATE TABLE ST3_cliente
 (
-SK_CLIENTE                      integer NOT NULL,
+SK_CLIENTE                     integer NOT NULL,
 Id      			           integer NOT NULL,
 Obra    			           char(4) NOT NULL,
 Bloco   			           char(2) NOT NULL,
@@ -247,21 +248,21 @@ V_ST4_CLIENTE C_CLIENTE%ROWTYPE;
 BEGIN
 	OPEN C_CLIENTE;
 		LOOP
-			FETCH C_CLIENTE INTO V_ST4_CLIENTE;
+			FETCH C_CLIENTE INTO V_ST3_CLIENTE;
 			EXIT WHEN C_CLIENTE%NOTFOUND;
 
 
 			INSERT INTO DIM_CLIENTE
 			VALUES
-			(V_ST4_CLIENTE.SK_CLIENTE,
-             V_ST4_CLIENTE.Id,
-			 V_ST4_CLIENTE.Obra,
-			 V_ST4_CLIENTE.Bloco,
-			 V_ST4_CLIENTE.Unidade,
-			 V_ST4_CLIENTE.Nome,
-             V_ST4_CLIENTE.DocumentoCliente,
-             V_ST4_CLIENTE.PercentualParticipacao,
-             V_ST4_CLIENTE.Ativo);
+			(V_ST3_CLIENTE.SK_CLIENTE,
+             V_ST3_CLIENTE.Id,
+			 V_ST3_CLIENTE.Obra,
+			 V_ST3_CLIENTE.Bloco,
+			 V_ST3_CLIENTE.Unidade,
+			 V_ST3_CLIENTE.Nome,
+             V_ST3_CLIENTE.DocumentoCliente,
+             V_ST3_CLIENTE.PercentualParticipacao,
+             V_ST3_CLIENTE.Ativo);
 
 		END LOOP;
 
